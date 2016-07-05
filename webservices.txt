@@ -1,0 +1,27 @@
+Get all sites to which user has access:
+GET /bimjson/sites/
+
+Get a specific site:
+GET /bimjson/sites/0C58BE78-1043-4929-8875-624DFFD9E435
+or
+GET /bimjson/sites/S161_345
+etc.
+
+Add query to get all sites that belong to a specific Project, Installation, or any other grouping:
+GET /bimjson/sites?installation=Seattle%20Group
+
+Update a site:
+PUT /bimjson/sites/0C58BE78-1043-4929-8875-624DFFD9E435
+
+Add a new site:
+POST /bimjson/sites/
+
+Get all spaces in a building:
+GET /bimjson/buildings/D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A/spaces/
+
+Get a specific space in a building:
+GET /bimjson/buildings/D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A/spaces/45F7808E-CBE2-4B18-80B4-EA4F38CA5379
+
+GET all spaces on a floor:
+GET /bimjson/buildings/D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A/spaces?floor_id=D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A
+

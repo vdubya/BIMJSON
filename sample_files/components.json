@@ -1,0 +1,46 @@
+[{
+	"component_id": "3A37551F-BD01-43E0-8EB8-9DF1E402F12C",
+	"date_created": "2016-07-31T15:43:14",
+	"date_modified": "2016-07-31T15:43:14",
+	"parent_id": "45F7808E-CBE2-4B18-80B4-EA4F38CA5379",
+	"unique_mark": "wc-01",
+	"height": 1.80,
+	"width": 0.75,
+	"depth": 0.30,
+	"placement": {
+		"angle": 1.5708,
+		"mirror_y": false,
+		"x": 5.293,
+		"y": 3.112,
+		"z": 0.85
+	},
+	"description": "Wall Hung Water Closet",
+	"serial_number": "YNC54980",
+	"installation_date": "2016-04-15",
+	"bar_code": "34235159",
+	"properties": {
+		"prop0": "value0",
+		"prop1": "value1"
+	},
+	"component_type": {
+		"type_id": "5D3F0838-8CEF-4E4D-ACD5-652A8F4E765B",
+		"name": "WC Wall Hung",
+		"description": "Wall Hung Water Closet",
+		"model_number": "WC-344_TL",
+		"manufacturer": "Villroy & Bosch",
+		"asset_type": "fixed",
+		"properties": {
+			"prop0": "value0",
+			"prop1": "value1"
+		}
+	},
+	"links": [{
+		"type": "file",
+		"name": "user_manual.pdf",
+		"url": "https://www.component-vendor.com/user_manual.pdf",
+		"properties": {
+			"prop0": "value0",
+			"prop1": "value1"
+		}
+	}]
+}]
