@@ -1,23 +1,25 @@
-[{
-	"type_id": "5D3F0838-8CEF-4E4D-ACD5-652A8F4E765B",
-	"date_created": "2016-07-31T15:43:14",
-	"date_modified": "2016-07-31T15:43:14",
-	"name": "WC Wall Hung",
-	"description": "Wall Hung Water Closet",
-	"model_number": "WC-344_TL",
-	"manufacturer": "Villroy & Bosch",
-	"asset_type": "fixed",
-	"properties": {
-		"prop0": "value0",
-		"prop1": "value1"
-	},
-	"links": [{
-		"type": "file",
-		"name": "user_manual.pdf",
-		"url": "https://www.component-vendor.com/user_manual.pdf",
+{
+	"types": [{
+		"type_id": "5D3F0838-8CEF-4E4D-ACD5-652A8F4E765B",
+		"date_created": "2016-07-31T15:43:14",
+		"date_modified": "2016-07-31T15:43:14",
+		"name": "WC Wall Hung",
+		"description": "Wall Hung Water Closet",
+		"model_number": "WC-344_TL",
+		"manufacturer": "Villroy & Bosch",
+		"asset_type": "fixed",
 		"properties": {
 			"prop0": "value0",
 			"prop1": "value1"
-		}
+		},
+		"links": [{
+			"type": "file",
+			"name": "user_manual.pdf",
+			"url": "https://www.component-vendor.com/user_manual.pdf",
+			"properties": {
+				"prop0": "value0",
+				"prop1": "value1"
+			}
+		}]
 	}]
-}]
+}
