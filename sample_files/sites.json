@@ -5,9 +5,9 @@
 		"date_modified": "2016-07-31T15:43:14",
 		"name": "East Campus",
 		"placement": {
-			"angle": 128.93, /* The angle is the anti-clockwise rotation of the site in relationship to North in degrees */
-			"latitude": 34.45353,
+			"angle": 128.93,
 			"longitude": 127.43563,
+			"latitude": 34.45353,
 			"altitude": 412.32,
 			"crs": {
 				"type": "name",
