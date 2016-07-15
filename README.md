@@ -98,13 +98,13 @@ The concept of data transfer for Minimal Viable BIM omits the inclusion of the f
 
 **The extrusion attribute** is a special attribute of the slab object. It is usually a negative value extruding the slab polygon downward from the placement of the slab within the floor object.
 
-**The height attribute** of spaces define their height up to the ceiling. The height maybe be zero for open spaces without a ceiling (open fields, parking, roof, etc.)
+**The height attribute** of spaces define their height up to the ceiling. The height may be zero for open spaces without a ceiling (open fields, parking, roof, etc.)
 
 ## The Zones and Systems Arrays
 
 The space object contains a **zones array**. Spaces can belong to one or many "zones" with specific attributes such as "circulation zones", "fire alarm zones", etc.
 
-The component object contains a **systems array**. Components can belong to a multitude of building systems such as HVAC, Electical, etc.
+The component object contains a **systems array**. Components can belong to a multitude of building systems such as HVAC, Electrical, etc.
 
 ## The Link Object
 
