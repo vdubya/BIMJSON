@@ -7,7 +7,7 @@
 
 # Introduction
 
-BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building Information Model) (MVB) through web services. The main objective is to create a clear and easy to understand structure with a high level of flexibility for data exchanges. The objects for the building geometry use a similar approach as [GeoJSON](http://geojson.org/) but with the addition of arcs, holes, and the extrusion of planar polygons for the 3-dimensional representation of building parts.
+BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building Information Model) (MVB) through web services. The main objective is to create a clear and easy to understand structure with a high level of flexibility for data exchanges. The objects for the building geometry are an extension of [GeoJSON](http://geojson.org/) with the addition of arcs, holes, and the extrusion of planar polygons for the 3-dimensional representation of building parts.
 
 The main root objects consist of the basic hierarchical elements of a building:
 
