@@ -24,9 +24,11 @@ Version 0.1, [GitHub repository](https://github.com/vdubya/BIMJSON)
 
 ###5. Support filtering, sorting, and pagination on collections.
 
-###6. Support link expansion of relationships. Allow clients to expand the data contained in the response by including additional representations instead of, or in addition to, links.
+###6. Support link expansion of relationships. 
+1. Allow clients to expand the data contained in the response by including additional representations instead of, or in addition to, links.
 
-###7. Support field projections on resources. Allow clients to reduce the number of fields that come back in the response.
+###7. Support field projections on resources. 
+1. Allow clients to reduce the number of fields that come back in the response.
 
 ###8. Use the HTTP method names to mean something:
 1. POST - create and other non-idempotent operations.
