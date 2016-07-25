@@ -17,13 +17,13 @@ These main objects may be expanded with additional objects to group specific fea
 
 ## BIMJSON objects
 
-### General
+### 1. General
 
 BIMJSON always consists of a single object with a name describing the values of that BIMJSON object. The "root" object contains an array to represent multiples of the main object.
 
 Each object in this first level array contains the ID of object with predefined attributes, a "placement" member for building parts (sites, buildings, floor slabs, spaces and components/assets), a "geometry" member (sites, buildings, floor slabs, spaces), free form "properties", and "links" of different possible types.
 
-### The Geometry Object
+### 2. The Geometry Object
 
 The Minimal Viable BIM currently focuses on the "negative space" that is created by walls and not on the walls themselves. The spaces can consist of rooms, open office areas with many cubicles or of the cubicles themselves, open spaces such as roof areas, parking areas, sport fields, or any other defined polygonal area.
 
@@ -70,7 +70,7 @@ The geometry object for a single building part consists of a single polygon whic
 
 For linear and point objects it is possible to add other geometries of types point and line_string. They follow the same logic as the polygon.
 
-### The Placement Object
+### 3. The Placement Object
 
 Each building part is placed within the context of the canvas that it belongs to.
 
@@ -86,27 +86,27 @@ The "angle" is the anti-clockwise rotation of the site in relationship to North 
 
 **All descendants of the floor object** (slabs, spaces, and components) are placed relative to the floor origin.
 
-### The Component Object
+### 4. The Component Object
 
 Components contain a placement object with a placement as well. The placement object contains an additional attribute "mirror_y" for mirrored objects. Objects mirrored over their X-axis are simply objects rotated by 180 degrees and mirrored over the Y-axis. Components contain the dimensions of the bounding box with the height, width, and depth attributes only. The term "length" was omitted on purpose due to its ambiguity relative to the coordinate system.
 The concept of data transfer for Minimal Viable BIM omits the inclusion of the full geometry of components. The objects can be handled by the respective applications through the mapping of the components to local or remote libraries. In addition, a link to the actual objects can be added in the link object of the component.
 
-### The Extrusion or Height Attribute
+### 5. The Extrusion or Height Attribute
 
 **The extrusion attribute** is a special attribute of the slab object. It is usually a negative value extruding the slab polygon downward from the placement of the slab within the floor object.
 
 **The height attribute** of spaces define their height up to the ceiling. The height may be zero for open spaces without a ceiling (open fields, parking, roof, etc.)
 
-### The Zones and Systems Arrays
+### 6. The Zones and Systems Arrays
 
 The space object contains a **zones array**. Spaces can belong to one or many "zones" with specific attributes such as "circulation zones", "fire alarm zones", etc.
 
 The component object contains a **systems array**. Components can belong to a multitude of building systems such as HVAC, Electrical, etc.
 
-### The Link Object
+### 7. The Link Object
 
 All BIMJSON objects may contain link objects which can be of many types. Some links might define other web services and APIs, while others simply link to files or images.
 
-### The Type Object
+### 8. The Type Object
 
 Type objects can be stored in a separate **types.json** file as a collection of identical component types found in a building, or it can be a unique object in the components object in which case it is called **component_type**. Type objects contain attribute data of component instances of the same type, e.g. model number, manufacturer, etc. to keep the component data as normalized as possible. Since the component_types can be included in the components objects, data from a data storage that is not fully normalized can be used.
