@@ -1,5 +1,6 @@
 Derived from: [RestCheatSheet/api-cheat-sheet](https://github.com/RestCheatSheet/api-cheat-sheet)
-See also: [Platform Building Cheat Sheet](https://github.com/RestCheatSheet/platform-cheat-sheet#platform-building-cheat-sheet)
+
+See also: [RestCheatSheet/platform-cheat-sheet](https://github.com/RestCheatSheet/platform-cheat-sheet#platform-building-cheat-sheet)
 
 # API Design Cheat Sheet
 1. Build the API with consumers in mind--as a product in its own right.
@@ -11,16 +12,16 @@ See also: [Platform Building Cheat Sheet](https://github.com/RestCheatSheet/plat
     * Two URLs (endpoints) per resource:
         * The resource collection (e.g. /orders)
         * Individual resource within the collection (e.g. /orders/{orderId}).
-    * Use plural forms (ëordersí instead of ëorderí).
+    * Use plural forms (‚Äòorders‚Äô instead of ‚Äòorder‚Äô).
     * Alternate resource names with IDs as URL nodes (e.g. /orders/{orderId}/items/{itemId})
     * Keep URLs as short as possible. Preferably, no more-than three nodes per URL.
 
-1. Use nouns as resource names (e.g. donít use verbs in URLs).
+1. Use nouns as resource names (e.g. don‚Äôt use verbs in URLs).
 
 1. Make resource representations meaningful.
-    * ìNo Naked IDs!î No plain IDs embedded in responses. Use links and reference objects.
-    * Design resource representations. Donít simply represent database tables.
-    * Merge representations. Donít expose relationship tables as two IDs.
+    * ‚ÄúNo Naked IDs!‚Äù No plain IDs embedded in responses. Use links and reference objects.
+    * Design resource representations. Don‚Äôt simply represent database tables.
+    * Merge representations. Don‚Äôt expose relationship tables as two IDs.
 
 1. Support filtering, sorting, and pagination on collections.
 
