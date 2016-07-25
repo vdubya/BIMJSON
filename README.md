@@ -3,8 +3,6 @@
 **Version 0.1**
 [GitHub repository](https://github.com/vdubya/BIMJSON)
 
-## Draft v1
-
 # Introduction
 
 BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building Information Model) (MVB) through web services. The main objective is to create a clear and easy to understand structure with a high level of flexibility for data exchanges. The objects for the building geometry are an extension of [GeoJSON](http://geojson.org/) with the addition of arcs, holes, and the extrusion of planar polygons for the 3-dimensional representation of building parts.
