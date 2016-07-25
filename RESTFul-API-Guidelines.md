@@ -1,8 +1,4 @@
-Derived from: [RestCheatSheet/api-cheat-sheet](https://github.com/RestCheatSheet/api-cheat-sheet)
-
-See also: [RestCheatSheet/platform-cheat-sheet](https://github.com/RestCheatSheet/platform-cheat-sheet#platform-building-cheat-sheet)
-
-# API Design Cheat Sheet
+# API Design Cheat Sheet, v0.1
 1. Build the API with consumers in mind--as a product in its own right.
     * Not for a specific UI.
     * Embrace flexibility / tunability of each endpoint (see #5, 6 & 7).
@@ -80,3 +76,10 @@ See also: [RestCheatSheet/platform-cheat-sheet](https://github.com/RestCheatShee
     * Last-Modified - The timestamp that the resource itself was modified last (in RFC1123 format). (ex: Last-Modified: Sun, 06 Nov 1994 08:49:37 GMT)
 
 1. Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).  There should be no adverse side affects from operations.
+
+----
+
+Derived from: [RestCheatSheet/api-cheat-sheet](https://github.com/RestCheatSheet/api-cheat-sheet#api-design-cheat-sheet)
+
+See also: [RestCheatSheet/platform-cheat-sheet](https://github.com/RestCheatSheet/platform-cheat-sheet#platform-building-cheat-sheet)
+
