@@ -78,6 +78,7 @@ Version 0.1, [GitHub repository](https://github.com/vdubya/BIMJSON)
 
 ###16. Ensure that your GET, PUT, and DELETE operations are all [idempotent](http://www.restapitutorial.com/lessons/idempotency.html).
 1. There should be no adverse side affects from operations.
+
 ____
 
 Derived from: [RestCheatSheet/api-cheat-sheet](https://github.com/RestCheatSheet/api-cheat-sheet#api-design-cheat-sheet).
