@@ -11,16 +11,16 @@
     * Two URLs (endpoints) per resource:
         * The resource collection (e.g. /orders)
         * Individual resource within the collection (e.g. /orders/{orderId}).
-    * Use plural forms (‘orders’ instead of ‘order’).
+    * Use plural forms (â€˜ordersâ€™ instead of â€˜orderâ€™).
     * Alternate resource names with IDs as URL nodes (e.g. /orders/{orderId}/items/{itemId})
     * Keep URLs as short as possible. Preferably, no more-than three nodes per URL.
 
-1. Use nouns as resource names (e.g. don’t use verbs in URLs).
+1. Use nouns as resource names (e.g. donâ€™t use verbs in URLs).
 
 1. Make resource representations meaningful.
-    * “No Naked IDs!” No plain IDs embedded in responses. Use links and reference objects.
-    * Design resource representations. Don’t simply represent database tables.
-    * Merge representations. Don’t expose relationship tables as two IDs.
+    * â€œNo Naked IDs!â€ No plain IDs embedded in responses. Use links and reference objects.
+    * Design resource representations. Donâ€™t simply represent database tables.
+    * Merge representations. Donâ€™t expose relationship tables as two IDs.
 
 1. Support filtering, sorting, and pagination on collections.
 
