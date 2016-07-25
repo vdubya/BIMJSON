@@ -48,7 +48,11 @@
 		},
 		"properties": {
 			"prop0": "value0",
-			"prop1": "value1"
+			"prop1": "value1",
+			"prop_object1":{
+				"prop0": "value0",
+				"prop1": "value1"
+			}
 		},
 		"zones": [{
 			"zone_id": "EC1405EE-AF8B-48FA-BE65-4317E5100906",
@@ -56,7 +60,11 @@
 			"zone_category": "Occupancy Zone",
 			"properties": {
 				"prop0": "value0",
-				"prop1": "value1"
+				"prop1": "value1",
+				"prop_object1":{
+					"prop0": "value0",
+					"prop1": "value1"
+				}
 			}
 		}],
 		"links": [{

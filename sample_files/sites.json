@@ -4,6 +4,7 @@
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
 		"name": "East Campus",
+		"category": "",
 		"placement": {
 			"angle": 128.93,
 			"longitude": 127.43563,
@@ -51,7 +52,11 @@
 		},
 		"properties": {
 			"prop0": "value0",
-			"prop1": "value1"
+			"prop1": "value1",
+			"prop_object1":{
+				"prop0": "value0",
+				"prop1": "value1"
+			}
 		},
 		"links": [{
 			"type": "web service",
