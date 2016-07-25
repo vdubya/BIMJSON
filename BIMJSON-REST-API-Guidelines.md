@@ -1,6 +1,6 @@
 # BIMJSON REST API Design Guidelines
 
-* v0.1
+**Version 0.1**
 
 1. Build the API with consumers in mind--as a product in its own right.
     * Not for a specific UI.

@@ -1,6 +1,6 @@
 # BIMJSON REST Platform-Building Guidelines
 
-* v0.1
+**Version 0.1**
 
 First off, we need to understand what is meant by the term **'platform'** for the organization.
 In todays world, the term 'platform' is such an overused buzzword that it is largely meaningless.
