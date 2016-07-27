@@ -21,7 +21,18 @@ Viewing all assets returns a complete list and displays the API requests made to
 
 #### Framework/Code:
 
-The sample Front End App uses the free open source [web2py](http://web2py.com) framework with a few simple pages of code to display, delete, create, and edit facility data through HTTP exchanges with the BIM-Cloud APIs. 
+The sample Front End App uses the free open source [web2py](http://web2py.com) framework with a few simple pages of code to display, delete, create, and edit facility data through HTTP exchanges with the BIM-Cloud APIs.
 
+**BEFORE DOWNLOADING THE SOURCE CODE, PLEASE REVIEW THE [TEMPORARY LICENSE FILE](../LICENSE.md)**
 
+Source code for both, Server and Front-End App, can be downloaded from here:
+[Download Source Code](https://www.onuma.com/transfer/bimjson.zip)
+
+**The zipped archive has the following structure:**
+
+![folder](https://www.onuma.com/transfer/web2py-code.png)
+
+Copy the full webservices folder into "applications" and modify routes.py for the BIM Cloud Server
+**or**
+copy the full inventory_list folder into "applications" and modify routes.py accordingly for the Front-End App
 
