@@ -13,18 +13,25 @@ The main root objects consist of the basic hierarchical elements of a building:
 
 - Site
 - Building
+- Floor
 - Space
 - Component
 
-These main objects may be expanded with additional objects to group specific features of a building into unique datasets.
+These main BIMJSON objects may contain geometries describing the physical elements. in addtion to the attributes holding the data attributes. They are are extended with additional objects which group features of a building into unique datasets:
+
+- building zones
+- building systems
+- component types
+- contacts
+- etc.
 
 # BIMJSON objects
 
 ## General
 
-BIMJSON always consists of a single object with a name describing the values of that BIMJSON object. The "root" object contains an array to represent multiples of the main object.
+BIMJSON always consists of a single object with a name in plural form describing the element of that BIMJSON object (sites, buildings, floors, etc.). This "root" object contains an array to represent multiples of the main object.
 
-Each object in this first level array contains the ID of object with predefined attributes, a "placement" member for building parts (sites, buildings, floor slabs, spaces and components/assets), a "geometry" member (sites, buildings, floor slabs, spaces), free form "properties", and "links" of different possible types.
+Each object in this first level array contains the ID of object with a small set of predefined attributes, a "placement" member for building parts (sites, buildings, floor slabs, spaces and components/assets), a "geometry" object (sites, buildings, floor slabs, spaces), free form "properties", and "links" of different possible types.
 
 ## The Geometry Object
 
@@ -83,7 +90,7 @@ The default (if nothing is specified) is the named CRS CRS84, i.e. basic WGS84 d
 
 The "angle" is the anti-clockwise rotation of the site in relationship to North in degrees, or the clockwise rotation of the north arrow in relationship with the canvas.
 
-**The building object** is placed relative to the site origin. The X, Y, and Z values are all relative to the longitude, latitude, and altitude of the site. The "angle" is the counter-clockwise orientation of the building relative to North.
+**The building object** is placed relative to the site origin. The X, Y, and Z values are all relative to this site origin. The "angle" is the counter-clockwise orientation of the building.
 
 **The floor object** is raised or lowered relative to the building elevation with the value of elevation_to_building. In the X- and Y-axis, it is never displaced relative to the building origin. Therefore the floor origin can be considered the same as the building origin’s X and Y values but displaced by the value of elevation_to_building.
 
