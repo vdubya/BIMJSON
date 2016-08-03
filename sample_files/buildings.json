@@ -7,7 +7,7 @@
 		"date_modified": "2016-07-31T15:43:14",
 		"site_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
 		"name": "East Hall",
-		"cateory": "13 24 00 00: Health Facilities",
+		"category": "13 24 00 00: Health Facilities",
 		"geometry": {
 			"type": "Point",
 			"coordinates": [-118.131428, 34.142424, 450.45]
