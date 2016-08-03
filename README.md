@@ -4,31 +4,48 @@ Version 0.1, [GitHub repository](https://github.com/vdubya/BIMJSON)
 
 ## Introduction
 
-BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building Information Model) (MVB) through web services. The main objective is to create a clear and easy to understand structure with a high level of flexibility for data exchanges. The objects for the building geometry use a similar approach as [GeoJSON](http://geojson.org/) with the addition of arcs, holes, and the extrusion of planar polygons for the 3-dimensional representation of building parts.
+BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building Information Model) (MVB) through web services. The main objective is to create a clear and easy to understand structure with a high level of flexibility for data exchanges. The objects for the building geometry is an Extension of [GeoJSON](http://geojson.org/). It makes use of many of the existing GeoJSON objects and object types. The following are a list of GeoJSON inherited features followed by a list of extended features.
 
-The main root objects consist of the basic hierarchical elements of a building:
+####Inherited Features:
 
-- Site
-- Building
-- Floor
-- Space
-- Component
+- GeoJSON objects must have a member with the name "type". This member's value is a string determining the type of GeoJSON object.
+- GeoJSON objects may have any number of members (name/value pairs).
+- Every "Feature" object has to have a geometry member and a properties member.
+- Geometry objects of any type other than "GeometryCollection" must have a member with the name "coordinates".
+- The default reference system for GeoJSON coordinates is a geographic coordinate reference system, using the WGS84 datum (specified in the latest GeoJSON specification of the [IETF](https://www.ietf.org) [Section 3](https://tools.ietf.org/html/draft-butler-geojson-06#section-3))
+- A commonly used identifier of a feature should be included as a member of the feature object with the name "id". 
 
-These main BIMJSON objects may contain geometries describing the physical elements. in addtion to the attributes holding the data attributes. They are are extended with additional objects which group features of a building into unique datasets:
 
-- building zones
-- building systems
-- component types
-- contacts
-- etc.
+####Extended Features:
+
+- In addition to the values possible in the GeoJSON geometry object, BIMJSON adds another geometry type "ComplexPolygon" that contains one or more "arcs" (round shapes). (more about this extension below)
+- The feature type "Feature" has been extended with the following feature types with the same requirements as the original "Feature" type to discribe the hierachical level within a BIM:
+  - Site
+  - Building
+  - Floor
+  - Space
+  - Component
+- The "Building", "Floor", "Space" and "Component" feature shall include a member containing the unique identifier of the parent object with the names site_id, building_id, floor_id, and space_id.
+- The "FeatureCollection" of GeoJSON has been extended with with a type "AttributeCollection" for non-geometric data collections needed to represent the data in BIM. They may be of one of the following types:
+  - System
+  - Type (Component Types)
+  - Zone
+  - Contact
+  - other non-geometric data collection types
+- The geometry object of the Building feature type is always a Point (also called the "insertion point" of the building).
+- The coordinates in the geometry object of the Floor, Space, and Component feature type may be relative to the point of the building geometry object. The x-, y-, and z-values are in meters displacement from the WGS84 coordinates of the point of the building geometry object (the "insertion point").
+- The "arc" geometry specified for BIMJSON can be segmented into straight lines whenever ALL geometry objects are specified by the WGS84 coordinate reference system. Note: the "arc" geometry requires a precision of at least 6 decimal point (in meters) which is why it is not recommended to use "arcs" with the WGS84 datum.
+- When using ALL WGS84 coordinates in BIMJSON, the additional "ComplexPolygon" geometry type is not needed and should be avoided.
 
 ## BIMJSON objects
 
 ### 1. General
 
-BIMJSON always consists of a single object with a name in plural form describing the element of that BIMJSON object (sites, buildings, floors, etc.). This "root" object contains an array to represent multiples of the main object.
+BIMJSON always consists of a single object of the type FeatureCollection or AttributeCollextion with "features" and "attributes" arrays containing the respecitve features.
 
-Each object in this first level array contains the ID of object with a small set of predefined attributes, a "placement" member for building parts (sites, buildings, floor slabs, spaces and components/assets), a "geometry" object (sites, buildings, floor slabs, spaces), free form "properties", and "links" of different possible types.
+Each feature object (FeatureCollection) shall have a geometry member.
+
+Each feaature or attribute object (FeatureCollection and AttributeCollection) shall have a property member, a link member, and any number of additional members (name/value pairs).
 
 ### 2. The Geometry Object
 
