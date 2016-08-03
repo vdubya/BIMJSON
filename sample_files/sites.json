@@ -1,59 +1,25 @@
 {
-	"sites": [{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Site",
 		"site_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
 		"name": "East Campus",
 		"category": "",
-		"placement": {
-			"angle": 128.93,
-			"longitude": 127.43563,
-			"latitude": 34.45353,
-			"altitude": 412.32,
-			"crs": {
-				"type": "name",
-				"properties": {
-					"name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-				}
-			}
-		},
 		"geometry": {
-			"type": "polygon",
-			"profile": {
-				"points": [
-					[15.3523, 45.0032],
-					[15.3523, 27.3254],
-					[-15.3523, 27.3254],
-					[-15.3523, 45.0032]
-				],
-				"arcs": [{
-					"center": [24.4556, 27.9966],
-					"start_index": 0,
-					"is_anticlockwise": true
-				}, {
-					"center": [20.8432, 23.5647],
-					"start_index": 0,
-					"is_anticlockwise": true
-				}],
-				"holes": [{
-					"points": [
-						[25.3523, 35.0032],
-						[25.3523, 30.3254],
-						[-5.3523, 30.3254],
-						[-5.3523, 35.0032]
-					],
-					"arcs": [{
-						"center": [24.4556, 27.9966],
-						"start_index": 0,
-						"is_anticlockwise": true
-					}]
-				}]
-			}
+			"type": "Polygon",
+			"coordinates": [
+				[-118.131428,34.142424],
+				[-118.131425,34.142302],
+				[-118.131109,34.142302],
+				[-118.131115,34.142419]
+			]
 		},
 		"properties": {
 			"prop0": "value0",
 			"prop1": "value1",
-			"prop_object1":{
+			"prop_object1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}

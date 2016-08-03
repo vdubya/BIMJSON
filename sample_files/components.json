@@ -1,5 +1,7 @@
 {
-	"components": [{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Component",
 		"component_id": "3A37551F-BD01-43E0-8EB8-9DF1E402F12C",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
@@ -9,12 +11,11 @@
 		"height": 1.80,
 		"width": 0.75,
 		"depth": 0.30,
-		"placement": {
+		"geometry": {
+			"type": "Point",
+			"coordinates": [5.293, 3.112, 0.85],
 			"angle": 1.5708,
-			"mirror_y": false,
-			"x": 5.293,
-			"y": 3.112,
-			"z": 0.85
+			"mirror_y": false
 		},
 		"serial_number": "YNC54980",
 		"installation_date": "2016-04-15",

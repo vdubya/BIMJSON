@@ -1,5 +1,7 @@
 {
-	"types": [{
+	"type": "AttributeCollection",
+	"attributes": [{
+		"type": "Type",
 		"type_id": "5D3F0838-8CEF-4E4D-ACD5-652A8F4E765B",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",

@@ -1,5 +1,7 @@
 {
-	"contacts": [{
+	"type": "AttributeCollection",
+	"attributes": [{
+		"type": "Contact",
 		"contact_id": "08D2C3D2-7198-4DF2-8E5C-76BD933C36B0",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",

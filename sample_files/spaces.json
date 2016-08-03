@@ -1,5 +1,7 @@
 {
-	"spaces": [{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Space",
 		"space_id": "45F7808E-CBE2-4B18-80B4-EA4F38CA5379",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
@@ -8,48 +10,44 @@
 		"number": "101",
 		"height": 2.80,
 		"placement": {
-			"angle": 0,
 			"x": 0,
-			"y": 0,
-			"z": 0
+			"y": 0
 		},
 		"geometry": {
-			"type": "polygon",
-			"profiles": [{
-				"points": [
-					[15.3523, 45.0032],
-					[15.3523, 27.3254],
-					[-15.3523, 27.3254],
-					[-15.3523, 45.0032]
+			"type": "ComplexPolygon",
+			"coordinates": [
+				[15.3523, 45.0032],
+				[15.3523, 27.3254],
+				[-15.3523, 27.3254],
+				[-15.3523, 45.0032]
+			],
+			"arcs": [{
+				"center": [24.4556, 27.9966],
+				"start_index": 0,
+				"is_anticlockwise": true
+			}, {
+				"center": [20.8432, 23.5647],
+				"start_index": 0,
+				"is_anticlockwise": true
+			}],
+			"holes": [{
+				"coordinates": [
+					[25.3523, 35.0032],
+					[25.3523, 30.3254],
+					[-5.3523, 30.3254],
+					[-5.3523, 35.0032]
 				],
 				"arcs": [{
 					"center": [24.4556, 27.9966],
 					"start_index": 0,
 					"is_anticlockwise": true
-				}, {
-					"center": [20.8432, 23.5647],
-					"start_index": 0,
-					"is_anticlockwise": true
-				}],
-				"holes": [{
-					"points": [
-						[25.3523, 35.0032],
-						[25.3523, 30.3254],
-						[-5.3523, 30.3254],
-						[-5.3523, 35.0032]
-					],
-					"arcs": [{
-						"center": [24.4556, 27.9966],
-						"start_index": 0,
-						"is_anticlockwise": true
-					}]
 				}]
 			}]
 		},
 		"properties": {
 			"prop0": "value0",
 			"prop1": "value1",
-			"prop_object1":{
+			"prop_object1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}
@@ -61,7 +59,7 @@
 			"properties": {
 				"prop0": "value0",
 				"prop1": "value1",
-				"prop_object1":{
+				"prop_object1": {
 					"prop0": "value0",
 					"prop1": "value1"
 				}

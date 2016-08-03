@@ -1,5 +1,7 @@
 {
-	"zones": [{
+	"type": "AttributeCollection",
+	"attributes": [{
+		"type": "Zone",
 		"zone_id": "3A37551F-BD01-43E0-8EB8-9DF1E402F12C",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",

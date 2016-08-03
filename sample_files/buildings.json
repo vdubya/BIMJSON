@@ -1,17 +1,18 @@
 {
-	"buildings": [{
+	"type": "FeatureCollection",
+	"features":[{
+		"type": "Building",
 		"building_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
 		"site_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
 		"name": "East Hall",
 		"cateory": "13 24 00 00: Health Facilities",
-		"placement": {
-			"angle": 1.5708,
-			"x": 0,
-			"y": 0,
-			"z": 0
+		"geometry": {
+			"type": "Point",
+			"coordinates": [-118.131428, 34.142424, 450.45]
 		},
+		"view_angle": 1.5708,
 		"properties": {
 			"prop0": "value0",
 			"prop1": "value1",
