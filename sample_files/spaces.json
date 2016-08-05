@@ -2,24 +2,25 @@
 	"type": "FeatureCollection",
 	"features": [{
 		"type": "Space",
-		"space_id": "45F7808E-CBE2-4B18-80B4-EA4F38CA5379",
+		"id": "45F7808E-CBE2-4B18-80B4-EA4F38CA5379",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
-		"floor_id": "D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A",
 		"name": "Conference Room",
+		"category": "13-11 21 17: Conference Room",
+		"floor_id": "D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A",
 		"number": "101",
 		"height": 2.80,
-		"placement": {
+		"label_placement": {
 			"x": 0,
 			"y": 0
 		},
 		"geometry": {
 			"type": "ComplexPolygon",
 			"coordinates": [
-				[15.3523, 45.0032],
-				[15.3523, 27.3254],
-				[-15.3523, 27.3254],
-				[-15.3523, 45.0032]
+				[15.3523, 45.0032, 12.4000],
+				[15.3523, 27.3254, 12.4000],
+				[-15.3523, 27.3254, 12.4000],
+				[-15.3523, 45.0032, 12.4000]
 			],
 			"arcs": [{
 				"center": [24.4556, 27.9966],
@@ -52,19 +53,6 @@
 				"prop1": "value1"
 			}
 		},
-		"zones": [{
-			"zone_id": "EC1405EE-AF8B-48FA-BE65-4317E5100906",
-			"zone_name": "Patient Area",
-			"zone_category": "Occupancy Zone",
-			"properties": {
-				"prop0": "value0",
-				"prop1": "value1",
-				"prop_object1": {
-					"prop0": "value0",
-					"prop1": "value1"
-				}
-			}
-		}],
 		"links": [{
 			"type": "image",
 			"name": "view of sink",
@@ -73,6 +61,13 @@
 				"prop0": "value0",
 				"prop1": "value1"
 			}
-		}]
+		}],
+		"zones": [{
+			"zone_id": "EC1405EE-AF8B-48FA-BE65-4317E5100906"
+			},
+			{
+			"zone_id": "CA50E6C3-04A3-45FE-99DB-661EE3B2F8B5"
+			}
+		]
 	}]
 }

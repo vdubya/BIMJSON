@@ -2,7 +2,7 @@
 	"type": "FeatureCollection",
 	"features": [{
 		"type": "Site",
-		"site_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
+		"id": "0C58BE78-1043-4929-8875-624DFFD9E435",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
 		"name": "East Campus",

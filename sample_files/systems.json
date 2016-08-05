@@ -2,11 +2,11 @@
 	"type": "AttributeCollection",
 	"attributes": [{
 		"type": "System",
-		"system_id": "3A37551F-BD01-43E0-8EB8-9DF1E402F12C",
+		"id": "3A37551F-BD01-43E0-8EB8-9DF1E402F12C",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
-		"category": "21-05 10 30: Commercial Equipment",
 		"name": "Equipment",
+		"category": "21-05 10 30: Commercial Equipment",
 		"properties": {
 			"prop0": "value0",
 			"prop1": "value1",
