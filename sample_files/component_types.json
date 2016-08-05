@@ -1,15 +1,14 @@
 {
 	"type": "AttributeCollection",
 	"attributes": [{
-		"type": "Type",
-		"type_id": "5D3F0838-8CEF-4E4D-ACD5-652A8F4E765B",
+		"type": "ComponentType",
+		"id": "5D3F0838-8CEF-4E4D-ACD5-652A8F4E765B",
 		"date_created": "2016-07-31T15:43:14",
 		"date_modified": "2016-07-31T15:43:14",
 		"name": "WC Wall Hung",
 		"category": "23-21 00 00: Furnishings, Fixtures and Equipment Products",
 		"model_number": "WC-344_TL",
-		"manufacturer": "Villroy & Bosch",
-		"asset_type": "fixed",
+		"manufacturer_id": "08D2C3D2-7198-4DF2-8E5C-76BD933C36B0",
 		"properties": {
 			"prop0": "value0",
 			"prop1": "value1",
