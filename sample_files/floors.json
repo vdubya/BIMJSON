@@ -1,46 +1,52 @@
 {
 	"type": "FeatureCollection",
 	"features": [{
-		"type": "Floor",
+		"type": "Feature",
 		"id": "D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A",
-		"date_created": "2016-07-31T15:43:14",
-		"date_modified": "2016-07-31T15:43:14",
-		"name": "First Floor",
-		"category": "Floor",
-		"building_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
-		"is_ground_floor": true,
-		"elevation_to_building": 0.20,
-		"height": 3.50,
 		"geometry": {
 			"type": "GeometryCollection",
 			"geometries": [{
-				"type": "Polygon",
+				"type": "MultiPolygon",
 				"coordinates": [
 					[
-						[15.3523, 45.0032, 0.20],
-						[15.3523, 27.3254, 0.20],
-						[-15.3523, 27.3254, 0.20],
-						[-15.3523, 45.0032, 0.20]
+						[
+							[15.3523, 45.0032, 0.20],
+							[15.3523, 27.3254, 0.20],
+							[-15.3523, 27.3254, 0.20],
+							[-15.3523, 45.0032, 0.20],
+							[15.3523, 45.0032, 0.20]
+						],
+						[
+							[10.3523, 40.0032],
+							[10.3523, 20.3254],
+							[-10.3523, 20.3254],
+							[-10.3523, 40.0032],
+							[10.3523, 40.0032]
+						]
 					],
 					[
-						[10.3523, 40.0032],
-						[10.3523, 20.3254],
-						[-10.3523, 20.3254],
-						[-10.3523, 40.0032]
+						[
+							[15.3523, 45.0032, 0.20],
+							[15.3523, 27.3254, 0.20],
+							[-15.3523, 27.3254, 0.20],
+							[-15.3523, 45.0032, 0.20],
+							[15.3523, 45.0032, 0.20]
+						]
 					]
 				],
 				"extrusion": -0.3048,
 				"properties": {
 					"prop0": "value0",
-					"prop1": "value1",
-				},
+					"prop1": "value1"
+				}
 			}, {
 				"type": "ComplexPolygon",
 				"coordinates": [
 					[15.3523, 45.0032, 0.20],
-					[15.3523, 27.3254, 0.20,
+					[15.3523, 27.3254, 0.20],
 					[-15.3523, 27.3254, 0.20],
-					[-15.3523, 45.0032, 0.20]
+					[-15.3523, 45.0032, 0.20],
+					[15.3523, 45.0032, 0.20]
 				],
 				"arcs": [{
 					"center": [24.4556, 27.9966],
@@ -56,7 +62,8 @@
 						[25.3523, 35.0032],
 						[25.3523, 30.3254],
 						[-5.3523, 30.3254],
-						[-5.3523, 35.0032]
+						[-5.3523, 35.0032],
+						[25.3523, 35.0032]
 					],
 					"arcs": [{
 						"center": [24.4556, 27.9966],
@@ -67,26 +74,33 @@
 				"extrusion": -0.3048,
 				"properties": {
 					"prop0": "value0",
-					"prop1": "value1",
-				},
+					"prop1": "value1"
+				}
 			}]
 		},
 		"properties": {
-			"prop0": "value0",
-			"prop1": "value1",
+			"featureType": "Floor",
+			"date_created": "2016-07-31T15:43:14",
+			"date_modified": "2016-07-31T15:43:14",
+			"name": "First Floor",
+			"category": "Floor",
+			"building_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
+			"is_ground_floor": true,
+			"elevation_to_building": 0.20,
+			"height": 3.50,
+			"links": [{
+				"type": "file",
+				"name": "Building Plans",
+				"url": "https://www.owner.com/East_Hall.rvt",
+				"properties": {
+					"prop0": "value0",
+					"prop1": "value1"
+				}
+			}],
 			"prop_object1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}
-		},
-		"links": [{
-			"type": "file",
-			"name": "Building Plans",
-			"url": "https://www.owner.com/East_Hall.rvt",
-			"properties": {
-				"prop0": "value0",
-				"prop1": "value1"
-			}
-		}]
+		}
 	}]
 }

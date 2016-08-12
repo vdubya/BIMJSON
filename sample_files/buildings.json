@@ -1,42 +1,41 @@
 {
 	"type": "FeatureCollection",
-	"features":[{
-		"type": "Building",
-		"id": "0C58BE78-1043-4929-8875-624DFFD9E435",
-		"date_created": "2016-07-31T15:43:14",
-		"date_modified": "2016-07-31T15:43:14",
-		"name": "East Hall",
-		"category": "13 24 00 00: Health Facilities",
-		"site_id": "0C58BE78-1043-4929-8875-624DFFD9E435",
-		"view_angle": 1.5708,
+	"features": [{
+		"type": "Feature",
+		"id": "B177_28",
 		"geometry": {
 			"type": "Point",
-			"coordinates": [-118.131428, 34.142424, 450.45]
+			"coordinates": [-122.34173387925, 47.558913185939, 4]
 		},
 		"properties": {
-			"prop0": "value0",
-			"prop1": "value1",
-			"prop_object1":{
+			"featureType": "Building",
+			"date_created": "2016-08-10T15:43:14",
+			"date_modified": "2016-08-10T15:43:14",
+			"name": "Revit-to-BIMJSON",
+			"category": "",
+			"site_id": "S177_9",
+			"view_angle": 0,
+			"prop_object1": {
 				"prop0": "value0",
 				"prop1": "value1"
-			}
-		},
-		"links": [{
-			"type": "file",
-			"name": "Building Plans",
-			"url": "https://www.owner.com/East_Hall.rvt",
-			"properties": {
-				"prop0": "value0",
-				"prop1": "value1"
-			}
-		}, {
-			"type": "web service",
-			"name": "Attainia Data",
-			"url": "https://www.attainia.com/projects/2359939398",
-			"properties": {
-				"prop0": "value0",
-				"prop1": "value1"
-			}
-		}]
+			},
+			"links": [{
+				"type": "file",
+				"name": "Building Plans",
+				"url": "https://www.owner.com/East_Hall.rvt",
+				"properties": {
+					"prop0": "value0",
+					"prop1": "value1"
+				}
+			}, {
+				"type": "web service",
+				"name": "Attainia Data",
+				"url": "https://www.attainia.com/projects/2359939398",
+				"properties": {
+					"prop0": "value0",
+					"prop1": "value1"
+				}
+			}]
+		}
 	}]
 }

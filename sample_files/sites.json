@@ -1,37 +1,38 @@
 {
 	"type": "FeatureCollection",
 	"features": [{
-		"type": "Site",
+		"type": "Feature",
 		"id": "0C58BE78-1043-4929-8875-624DFFD9E435",
-		"date_created": "2016-07-31T15:43:14",
-		"date_modified": "2016-07-31T15:43:14",
-		"name": "East Campus",
-		"category": "",
 		"geometry": {
 			"type": "Polygon",
 			"coordinates": [
-				[-118.131428,34.142424],
-				[-118.131425,34.142302],
-				[-118.131109,34.142302],
-				[-118.131115,34.142419]
+				[
+					[-118.131428, 34.142424],
+					[-118.131425, 34.142302],
+					[-118.131109, 34.142302],
+					[-118.131115, 34.142419],
+					[-118.131428, 34.142424]
+				]
 			]
 		},
 		"properties": {
-			"prop0": "value0",
-			"prop1": "value1",
+			"date_created": "2016-07-31T15:43:14",
+			"date_modified": "2016-07-31T15:43:14",
+			"name": "East Campus",
+			"category": "",
 			"prop_object1": {
 				"prop0": "value0",
 				"prop1": "value1"
-			}
-		},
-		"links": [{
-			"type": "web service",
-			"name": "FUSION Data",
-			"url": "https://www.fusion.com/campuscode/56",
-			"properties": {
-				"prop0": "value0",
-				"prop1": "value1"
-			}
-		}]
+			},
+			"links": [{
+				"type": "web service",
+				"name": "FUSION Data",
+				"url": "https://www.fusion.com/campuscode/56",
+				"properties": {
+					"prop0": "value0",
+					"prop1": "value1"
+				}
+			}]
+		}
 	}]
 }

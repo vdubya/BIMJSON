@@ -1,30 +1,29 @@
 {
 	"type": "AttributeCollection",
 	"attributes": [{
-		"type": "ComponentType",
+		"type": "Attribute",
 		"id": "5D3F0838-8CEF-4E4D-ACD5-652A8F4E765B",
-		"date_created": "2016-07-31T15:43:14",
-		"date_modified": "2016-07-31T15:43:14",
-		"name": "WC Wall Hung",
-		"category": "23-21 00 00: Furnishings, Fixtures and Equipment Products",
-		"model_number": "WC-344_TL",
-		"manufacturer_id": "08D2C3D2-7198-4DF2-8E5C-76BD933C36B0",
 		"properties": {
-			"prop0": "value0",
-			"prop1": "value1",
-			"prop_object1":{
+			"attributeType": "ComponentType",
+			"date_created": "2016-07-31T15:43:14",
+			"date_modified": "2016-07-31T15:43:14",
+			"name": "WC Wall Hung",
+			"category": "23-21 00 00: Furnishings, Fixtures and Equipment Products",
+			"model_number": "WC-344_TL",
+			"manufacturer_id": "08D2C3D2-7198-4DF2-8E5C-76BD933C36B0",
+			"links": [{
+				"type": "file",
+				"name": "user_manual.pdf",
+				"url": "https://www.component-vendor.com/user_manual.pdf",
+				"properties": {
+					"prop0": "value0",
+					"prop1": "value1"
+				}
+			}],
+			"prop_object1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}
-		},
-		"links": [{
-			"type": "file",
-			"name": "user_manual.pdf",
-			"url": "https://www.component-vendor.com/user_manual.pdf",
-			"properties": {
-				"prop0": "value0",
-				"prop1": "value1"
-			}
-		}]
+		}
 	}]
 }

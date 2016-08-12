@@ -1,28 +1,27 @@
 {
 	"type": "AttributeCollection",
 	"attributes": [{
-		"type": "System",
+		"type": "Attribute",
 		"id": "3A37551F-BD01-43E0-8EB8-9DF1E402F12C",
-		"date_created": "2016-07-31T15:43:14",
-		"date_modified": "2016-07-31T15:43:14",
-		"name": "Equipment",
-		"category": "21-05 10 30: Commercial Equipment",
 		"properties": {
-			"prop0": "value0",
-			"prop1": "value1",
-			"prop_object1":{
+			"attributeType": "System",
+			"date_created": "2016-07-31T15:43:14",
+			"date_modified": "2016-07-31T15:43:14",
+			"name": "Equipment",
+			"category": "21-05 10 30: Commercial Equipment",
+			"links": [{
+				"type": "file",
+				"name": "user_manual.pdf",
+				"url": "https://www.component-vendor.com/user_manual.pdf",
+				"properties": {
+					"prop0": "value0",
+					"prop1": "value1"
+				}
+			}],
+			"prop_object1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}
-		},
-		"links": [{
-			"type": "file",
-			"name": "user_manual.pdf",
-			"url": "https://www.component-vendor.com/user_manual.pdf",
-			"properties": {
-				"prop0": "value0",
-				"prop1": "value1"
-			}
-		}]
+		}
 	}]
 }
