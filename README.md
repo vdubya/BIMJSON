@@ -15,14 +15,15 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 
 ####Extended Features:
 - In addition to the values possible in the GeoJSON geometry object, BIMJSON adds another geometry type `"ComplexPolygon"` that contains one or more `"arcs"` (round shapes) (more about this extension below)
-- The feature type `"feature"` has been extended with the following feature types with the same requirements as the original type to describe the hierarchical level within a BIM:
+- The feature type `"Feature"` has been extended with the following feature types with the same requirements as the original type to describe the hierarchical level within a BIM:
   - `"Site"`
   - `"Building"`
   - `"Floor"`
   - `"Space"`
   - `"Component"`
-- The `"Site"`, `"Building"`, `"Floor"`, `"Space"` and `"Component"` features shall include a member containing the unique identifier of the parent object with the names `"site_id"`, `"building_id"`, `"floor_id"`, `"space_id"` and `"component_id"`.
-- The `"FeatureCollection"` of GeoJSON has been extended with with a type `"AttributeCollection"` for non-geometric data collections needed to represent the data in BIM. They may be of one of the following types:
+- The first `"properties"` attribute specifies the above `"featureType"`
+- The `"Site"`, `"Building"`, `"Floor"`, `"Space"` and `"Component"` features shall include a property containing the unique identifier of the parent object with the names `"site_id"`, `"building_id"`, `"floor_id"`, `"space_id"` and `"component_id"`.
+- The `"FeatureCollection"` of GeoJSON has been extended with with a type `"AttributeCollection"` for non-geometric data collections needed to represent the data in BIM. They may be of one of the following `"attributeType"`:
   - `"System"`
   - `"ComponentType"`
   - `"Zone"`
@@ -36,7 +37,7 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 ### 1. General
 - BIMJSON always consists of a single object of the type `"FeatureCollection"` or `"AttributeCollection"` with `"features"` and `"attributes"` arrays containing the respective features.
 - Each feature object (`"FeatureCollection"`) shall have a geometry member.
-- Each feature or attribute object (`"FeatureCollection"` and `"AttributeCollection"`) shall have a property member, a link member, and any number of additional members (name/value pairs).
+- Each feature or attribute object (`"FeatureCollection"` and `"AttributeCollection"`) shall have a property member.
 
 ### 2. The Geometry Object
 - The Minimal Viable BIM currently focuses on the "negative space" that is created by walls and not on the walls themselves. The "spaces" can consist of rooms, open office areas with many cubicles or of the cubicles themselves, open spaces such as roof areas, parking areas, sport fields, or any other defined polygonal area.
@@ -44,6 +45,7 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 - GeoJSON `"Polygons"` contain an array of coordinates for a polygon without a hole or multiple arrays of coordinates where the first array is the outer ring of the polygon followed by arrays for the holes.
 - The outer ring of `"coordinates"` for `"Floors"` and `"Spaces"` and the `"coordinates"` for the point geometry of `"Components"` always consist of dimensions for all three axes. `"Holes"` (inner rings) and `"arcs"` only contain `"X"` and `"Y"` values.
 - A BIMJSON `"ComplexPolygon"` contains an array of coordinates followed by an array of `"arc"` objects for curved edges. This may be followed by an array of `"hole"` objects which in turn may contain `"arc"` objects as well. The `"arcs"` are defined by `"center"`, the `"start_index"` of the polygon point where the arc starts, and `"is_anticlockwise"` as the direction of the arc. The following examples show the GeoJSON `"Polygon"` with a hole and the BIMJSON `"ComplextPolygon"`. A graphic illustration for the constructions of arcs is shown below.
+- The outer and inner ring of Polygons, MultiPolygons, and ComplexPolygons shall always be closed, i.e. the first point must be repeated at the end of the coordinates.
 
 **Example `"Polygon"` with hole**
 
@@ -54,13 +56,15 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 				[15.3523, 45.0032, 5.2000],
 				[15.3523, 27.3254, 5.2000],
 				[-15.3523, 27.3254, 5.2000],
-				[-15.3523, 45.0032, 5.2000]
+				[-15.3523, 45.0032, 5.2000],
+				[15.3523, 45.0032, 5.2000]
 			],
 			[
 				[10.3523, 40.0032],
 				[10.3523, 20.3254],
 				[-10.3523, 20.3254],
-				[-10.3523, 40.0032]
+				[-10.3523, 40.0032],
+				[10.3523, 40.0032]
 			]
 		]
 	}
@@ -77,7 +81,8 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 			[0.50, 1.10, 5.2000],
 			[0.00, 1.10, 5.2000],
 			[0.00, 0.00, 5.2000],
-			[1.20, 0.00, 5.2000]
+			[1.20, 0.00, 5.2000],
+			[2.20, 0.50, 5.2000]
 		],
 		"arcs": [{
 			"center": [1.94, -0.24],
@@ -93,7 +98,8 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 				[0.20, 0.20],
 				[0.50, 0.20],
 				[0.50, 0.60],
-				[0.20, 0.60]
+				[0.20, 0.60],
+				[0.20, 0.20]
 			]
 		}]
 	}
@@ -124,10 +130,10 @@ For linear and point objects it is possible to use geometries of types `"point"`
 
 
 ### 4.2. FeatureCollection
-- A `"FeatureCollection"` is of type `"Site"`, `"Building"`, `"Floor"`, `"Space"`, or `"Component"` in this hierarchical sequence.
+- A `"FeatureCollection"` is of `"featureType"` `"Site"`, `"Building"`, `"Floor"`, `"Space"`, or `"Component"` in this hierarchical sequence.
 - Except fo the `"Site"`, each of these objects contains the foreign key id of its parent object in the following format: [parent]_id (e.g. site_id, building_id, etc.).
 - Each of these objects must have a member with the name `"geometry"`.
-- Each of these objects has a fixed set of attibutes in addition to the ones listed above and may have other member objects with additional building data.
+- Each of these objects has a fixed set of attibutes in the `"properties"` and may have other member objects with additional building data.
 
 ### 4.3. AttributeCollection
 - An `"AttributeCollection"` of type `"System"`, `"Zone"`, `"Contact"`, `"ComponentType"` and possibley others contain non-geometric building data.
@@ -139,14 +145,14 @@ For linear and point objects it is possible to use geometries of types `"point"`
 ### 5.2 The Building Feature
 - The `"geometry"` object of the `"Building"` is of type `"Point"` with world coordinates based on the WGS84 datum.
 - This `"Point"` serves as the point of origin of the orthogoanal local coordinate system within the building for BIMJSON objects.
-- In addition to the standard members of a `"FeatureCollection"`, the `"Building"` object contains the following attribute:
+- In addition to the standard members of a `"FeatureCollection"`, the `"Building"` object contains the following `"properties"`:
   - `"view_angle"`: the clockwise rotation of the view-port in radians to allow the building and its children to be displayed in an orthogonal layout (i.e. the building is rotated anti-clockwise to fit the orthogonal view-port). This angle does not have any impact on the local coordinates. **It's for viewing purposes only**.
 
 ### 5.3 The Floor Feature
-- The `"geometry"` object of the `"Floor"` creates one or more polygons for one or more floor slabs. In the case of multiple slabs on a single floor, the `"geometry"` object shall be a `"GeometryCollection"` containing an array of geometries for the various slabs.
+- The `"geometry"` object of the `"Floor"` creates one or more polygons for one or more floor slabs. In the case of multiple slabs on a single floor, the `"geometry"` object shall be either a `"MultiPolygon"` object or a `"GeometryCollection"` containing an array of geometries for the various slabs.
 - For the standard BIMJSON object, the coordinates are orthogonal metric using the local building point as origin. The outer ring of the coordinates shall have three dimensions per point (`"x"`, `"y"`, and `"z"`).
 - each polygon shall have an negative extrusion for the thickness of the slab and a properties object.
-- In addition to the standard members of a `"FeatureCollection"`, `"Floor"` objects shall have 3 additional attributes:
+- In addition to the standard members of a `"FeatureCollection"`, `"Floor"` objects shall have 3 additional `"properties"`:
   - `"is_ground_floor"`
   - `"elevation_to_building"` (floor elevation relative to building geometry)
   - `"height"` (floor-to-floor height)
@@ -154,7 +160,7 @@ For linear and point objects it is possible to use geometries of types `"point"`
 ### 5.4 The Space Feature
 - The `"geometry"` object of the `"Space"` consists of a single geometry of either the `"Polygon"` type for spaces without curved edges or the `"ComplexPolygon"` type if curves are required.
 - For the standard BIMJSON object, the coordinates are orthogonal metric using the local building point as origin. The outer ring of the coordinates shall have three dimensions per point (`"x"`, `"y"`, and `"z"`).
-- In addition to the standard members of a `"FeatureCollection"`, `"Space"` objects shall have 2 additional attributes and a additional object:
+- In addition to the standard members of a `"FeatureCollection"`, `"Space"` objects shall have 2 additional `"properties"` and a additional object:
   - `"number"`
   - `"height"` (room/space height)
   - `"label_placement"` object with `"z"` and `"y"` coordinates.
@@ -163,7 +169,7 @@ For linear and point objects it is possible to use geometries of types `"point"`
 ### 5.5 The Component Feature
 - The `"geometry"` object of the `"Component"` is a `"Point"` type with coordinates for all three axes. In addition, it contains an `"angle"` attribute with the counterclockwise rotation of the object in radians and a `"mirror_y"` attribute that can be set to `"true"` or `"false"`. Note: Mirroring over the X-axis is not needed since the combination of a rotation with a mirroring over the Y-axis leads to the same result.
 - For the standard BIMJSON object, the coordinates are orthogonal metric using the local building point as origin.
-- In addition to the standard members of a `"FeatureCollection"`, `"Component"` objects shall have 7 additional attributes:
+- In addition to the standard members of a `"FeatureCollection"`, `"Component"` objects shall have 7 additional `"properties"`:
   - `"unique_mark"`: the plan identifier of the object (also called Mark or Symbol).
   -  `"height"`, `"width"`, and `"depth"` for the bounding box of the components.
   - `"serial number"`
@@ -174,24 +180,24 @@ For linear and point objects it is possible to use geometries of types `"point"`
 
 
 ### 6.1. The ComponentType Attribute
-- The non-geometric data of identical components in a building is stored in an `"AttributeCollection"` of type `"ComponentType"`
+- The non-geometric data of identical components in a building is stored in an `"AttributeCollection"` of `"featureType"` `"ComponentType"`
 - As an alternative to being transmitted in a separate **compnent_types.json** file, a single object of this type can be included with each "Component" feature.
 - In addtion to the standard members of an `"AttributeCollection"`, `"ComponentType"` objects shall have 2 additional attributes:
   - `"model_number"`
   - `"manufacturer_id"` (a unique ID in contacts.json)
 
 ### 6.2. The System Attribute
-- The non-geometric data of building systems (electical, plumbing, HVAC, etc.) in a building is stored in an `"AttributeCollection"` of type `"System"`
+- The non-geometric data of building systems (electical, plumbing, HVAC, etc.) in a building is stored in an `"AttributeCollection"` of `"featureType"` `"System"`
 - As an alternative to being transmitted in a separate **sytems.json** file, an array of objects of this type can be included with each `"Component"` feature.
 - The object has the standard members and attributes of the `"AttributeCollection"`.
 
 ### 6.3. The Zone Attribute
-- The non-geometric data of zones (fire zones, HVAC zones, circulation zones, departments, functional areas, etc.) in a building is stored in an `"AttributeCollection"` of type `"Zone"`
+- The non-geometric data of zones (fire zones, HVAC zones, circulation zones, departments, functional areas, etc.) in a building is stored in an `"AttributeCollection"` of `"featureType"` `"Zone"`
 - As an alternative to being transmitted in a separate **zones.json** file, an array of objects of this type can be included with each `"Space"` feature.
 - The object has the standard members and attributes of the `"AttributeCollection"`.
 
 ### 6.4. The Contact Attribute
-- The non-geometric data of contacts associated with a building (planners, owners, contractors, manufacturers, warrantors, etc.) is stored in an `"AttributeCollection"` of type ``"Contact"``
+- The non-geometric data of contacts associated with a building (planners, owners, contractors, manufacturers, warrantors, etc.) is stored in an `"AttributeCollection"` of `"featureType"` ``"Contact"``
 - In addtion to the standard members of an `"AttributeCollection"`, `"ComponentType"` objects shall have 3 additional attributes:
   - `"www"` (a unique web address or email)
   - `"phone"` (main phone number of contact)
