@@ -9,13 +9,13 @@
 		},
 		"properties": {
 			"featureType": "Building",
-			"date_created": "2016-08-10T15:43:14",
-			"date_modified": "2016-08-10T15:43:14",
+			"dateCreated": "2016-08-10T15:43:14",
+			"dateModified": "2016-08-10T15:43:14",
 			"name": "Revit-to-BIMJSON",
 			"category": "",
-			"site_id": "S177_9",
-			"view_angle": 0,
-			"prop_object1": {
+			"siteId": "S177_9",
+			"viewAngle": 0,
+			"propObject1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			},

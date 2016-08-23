@@ -3,50 +3,29 @@
 	"features": [{
 		"type": "Feature",
 		"id": "45F7808E-CBE2-4B18-80B4-EA4F38CA5379",
-		"label_placement": {
+		"labelPlacement": {
 			"x": 0,
 			"y": 0
 		},
 		"geometry": {
-			"type": "ComplexPolygon",
+			"type": "Polygon",
 			"coordinates": [
-				[15.3523, 45.0032, 12.4000],
-				[15.3523, 27.3254, 12.4000],
-				[-15.3523, 27.3254, 12.4000],
-				[-15.3523, 45.0032, 12.4000],
-				[15.3523, 45.0032, 12.4000]
-			],
-			"arcs": [{
-				"center": [24.4556, 27.9966],
-				"start_index": 0,
-				"is_anticlockwise": true
-			}, {
-				"center": [20.8432, 23.5647],
-				"start_index": 0,
-				"is_anticlockwise": true
-			}],
-			"holes": [{
-				"coordinates": [
-					[25.3523, 35.0032],
-					[25.3523, 30.3254],
-					[-5.3523, 30.3254],
-					[-5.3523, 35.0032],
-					[25.3523, 35.0032]
-				],
-				"arcs": [{
-					"center": [24.4556, 27.9966],
-					"start_index": 0,
-					"is_anticlockwise": true
-				}]
-			}]
+				[
+					[15.3523, 45.0032, 12.4000],
+					[15.3523, 27.3254, 12.4000],
+					[-15.3523, 27.3254, 12.4000],
+					[-15.3523, 45.0032, 12.4000],
+					[15.3523, 45.0032, 12.4000]
+				]
+			]
 		},
 		"properties": {
 			"featureType": "Space",
-			"date_created": "2016-07-31T15:43:14",
-			"date_modified": "2016-07-31T15:43:14",
+			"dateCreated": "2016-07-31T15:43:14",
+			"dateModified": "2016-07-31T15:43:14",
 			"name": "Conference Room",
 			"category": "13-11 21 17: Conference Room",
-			"floor_id": "D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A",
+			"floorId": "D0D9EDE3-0EFE-44F2-A0A8-E7E5D2A9EE1A",
 			"number": "101",
 			"height": 2.80,
 			"links": [{
@@ -63,7 +42,7 @@
 			}, {
 				"zone_id": "CA50E6C3-04A3-45FE-99DB-661EE3B2F8B5"
 			}],
-			"prop_object1": {
+			"propObject1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}

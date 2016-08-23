@@ -16,11 +16,11 @@
 			]
 		},
 		"properties": {
-			"date_created": "2016-07-31T15:43:14",
-			"date_modified": "2016-07-31T15:43:14",
+			"dateCreated": "2016-07-31T15:43:14",
+			"dateModified": "2016-07-31T15:43:14",
 			"name": "East Campus",
 			"category": "",
-			"prop_object1": {
+			"propObject1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			},

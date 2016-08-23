@@ -5,8 +5,8 @@
 		"id": "3A37551F-BD01-43E0-8EB8-9DF1E402F12C",
 		"properties": {
 			"attributeType": "Zone",
-			"date_created": "2016-07-31T15:43:14",
-			"date_modified": "2016-07-31T15:43:14",
+			"dateCreated": "2016-07-31T15:43:14",
+			"dateModified": "2016-07-31T15:43:14",
 			"name": "Accounting",
 			"category": "Department",
 			"links": [{
@@ -18,7 +18,7 @@
 					"prop1": "value1"
 				}
 			}],
-			"prop_object1": {
+			"propObject1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}

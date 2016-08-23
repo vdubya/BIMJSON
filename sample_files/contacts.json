@@ -5,8 +5,8 @@
 		"id": "08D2C3D2-7198-4DF2-8E5C-76BD933C36B0",
 		"properties": {
 			"attributeType": "Contact",
-			"date_created": "2016-07-31T15:43:14",
-			"date_modified": "2016-07-31T15:43:14",
+			"dateCreated": "2016-07-31T15:43:14",
+			"dateModified": "2016-07-31T15:43:14",
 			"name": "Wayfair",
 			"category": "31 11 00: Manufacturers",
 			"www": "www.wayfair.com",
@@ -20,7 +20,7 @@
 					"prop1": "value1"
 				}
 			}],
-			"prop_object1": {
+			"propObject1": {
 				"prop0": "value0",
 				"prop1": "value1"
 			}
