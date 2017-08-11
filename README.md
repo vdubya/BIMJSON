@@ -5,7 +5,7 @@ Version 0.2, [GitHub repository](https://github.com/vdubya/BIMJSON)
 ## Introduction
 BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building Information Model) (MVB) through web services. The main objective is to create a clear and easy to understand structure with a high level of flexibility for data exchanges. BIMJSON geometry objects are an extension of [GeoJSON](http://geojson.org/). This API adheres to the [BIMJSON REST API Guidelines](https://github.com/vdubya/BIMJSON/blob/master/BIMJSON-REST-API-Guidelines.md). BIMJSON is a collaborative effort...please submit GitHub pull requests for fixes and features for the API and Guidelines.
 
-####Inherited Features:
+#### Inherited Features:
 - GeoJSON objects must have a member with the name `"type"`. This member's value is a string determining the type of GeoJSON object.
 - GeoJSON objects may have any number of members (name/value pairs).
 - Every `"feature"` object must have a `"geometry"` member and a `"properties"` member.
@@ -13,7 +13,7 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 - The default reference system for GeoJSON coordinates is a geographic coordinate reference system, using the WGS84 datum (specified in the latest GeoJSON specification of the [IETF](https://www.ietf.org) [Section 3](https://tools.ietf.org/html/draft-butler-geojson-06#section-3)).
 - A commonly used identifier of a feature should be included as a member of the feature object with the name `"id"`. 
 
-####Extended Features:
+#### Extended Features:
 - In addition to the values possible in the GeoJSON geometry object, BIMJSON adds another geometry type `"ComplexPolygon"` that contains one or more `"arcs"` (round shapes) (more about this extension below)
 - The feature type `"Feature"` has been extended with the following feature types with the same requirements as the original type to describe the hierarchical level within a BIM:
   - `"Site"`
@@ -178,7 +178,6 @@ For linear and point objects it is possible to use geometries of types `"point"`
 - `"Component"` objects may have an array member called `"systems"` containing objects with at least a `"system_id"` as a foreign key to the objects in the "AttributeColletion" of type `"System"`. For data exchanges, these objects may also contain all the attributes and objects from the related `"System"` type BIMJSON object.
 - `"Component"` objects may have a single object member called `"component_type"` containing at least a `"component_type_id"` as a foreign key to the objects in the `"AttributeColletion"` of type `"ComponentType"`. For data exchanges, this object may also contain all the attributes and objects from the related `"ComponentType"` BIMJSON object.
 
-
 ### 6.1. The ComponentType Attribute
 - The non-geometric data of identical components in a building is stored in an `"AttributeCollection"` of `"featureType"` `"ComponentType"`
 - As an alternative to being transmitted in a separate **compnent_types.json** file, a single object of this type can be included with each "Component" feature.
@@ -201,4 +200,3 @@ For linear and point objects it is possible to use geometries of types `"point"`
 - In addtion to the standard members of an `"AttributeCollection"`, `"ComponentType"` objects shall have 3 additional attributes:
   - `"www"` (a unique web address or email)
   - `"phone"` (main phone number of contact)
-
