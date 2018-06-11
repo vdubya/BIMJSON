@@ -139,7 +139,7 @@ For linear and point objects it is possible to use geometries of types `"point"`
 - An `"AttributeCollection"` of type `"System"`, `"Zone"`, `"Contact"`, `"ComponentType"` and possibley others contain non-geometric building data.
 
 ### 5.1 The Site Feature
-- The coordinates in the `"Site"` object are always longitude/latitued coordinates based on the WGS84 datum.
+- The coordinates in the `"Site"` object are always longitude/latitude coordinates based on the WGS84 datum.
 - The object has the standard members and attributes of the `"FeatureCollection"`.
 
 ### 5.2 The Building Feature
