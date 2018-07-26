@@ -41,7 +41,7 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 
 ### 2. The Geometry Object
 - The Minimal Viable BIM currently focuses on the "negative space" that is created by walls and not on the walls themselves. The "spaces" can consist of rooms, open office areas with many cubicles or of the cubicles themselves, open spaces such as roof areas, parking areas, sport fields, or any other defined polygonal area.
-- The geometry object for a single building part contains a geometry type with a `"coordinates"` array OR it constains a `"GeometryCollection"` with multiple geometries.
+- The geometry object for a single building part contains a geometry type with a `"coordinates"` array OR it contains a `"GeometryCollection"` with multiple geometries.
 - GeoJSON `"Polygons"` contain an array of coordinates for a polygon without a hole or multiple arrays of coordinates where the first array is the outer ring of the polygon followed by arrays for the holes.
 - The outer ring of `"coordinates"` for `"Floors"` and `"Spaces"` and the `"coordinates"` for the point geometry of `"Components"` always consist of dimensions for all three axes. `"Holes"` (inner rings) and `"arcs"` only contain `"X"` and `"Y"` values.
 - A BIMJSON `"ComplexPolygon"` contains an array of coordinates followed by an array of `"arc"` objects for curved edges. This may be followed by an array of `"hole"` objects which in turn may contain `"arc"` objects as well. The `"arcs"` are defined by `"center"`, the `"start_index"` of the polygon point where the arc starts, and `"is_anticlockwise"` as the direction of the arc. The following examples show the GeoJSON `"Polygon"` with a hole and the BIMJSON `"ComplexPolygon"`. A graphic illustration for the constructions of arcs is shown below.
@@ -113,7 +113,7 @@ For linear and point objects it is possible to use geometries of types `"point"`
 ### 3. The Coordinate System
 - A `"Site"` and `"Building"` objects are always longitude/latitude coordinates based on the WGS84 datum (the default of GeoJSON, KML, and others)
 - The coordinates in the geometry object of the `"Floor"`, `"Space"`, and `"Component"` feature type may be relative to the point of the building geometry object. The `"x"`, `"y"`, and `"z"` values are the displacement in meters from the WGS84 coordinates of the point of the building geometry object (the "insertion point").
-- In additon to the use of the **orthogonal local coordinate system**, applications which support BIMJSON exchanges may also use **a GeoJSON flavor by using transformations** to convert all local coordinates into WGS84 coordinates. Whenever the coordinates are transformed to make them useful in a GIS environment the following rules shall be applied: 
+- In addition to the use of the **orthogonal local coordinate system**, applications which support BIMJSON exchanges may also use **a GeoJSON flavor by using transformations** to convert all local coordinates into WGS84 coordinates. Whenever the coordinates are transformed to make them useful in a GIS environment the following rules shall be applied: 
   - The `"arc"` geometry specified for BIMJSON shall be segmented into straight lines (Note: the `"arc"` geometry requires a precision of at least 6 decimal point in meters which is why it is not recommended to use `"arcs`" with the WGS84 datum.)
   - The additional `"ComplexPolygon"` geometry type used to allow arcs is not needed and shall be avoided.
 
@@ -133,10 +133,10 @@ For linear and point objects it is possible to use geometries of types `"point"`
 - A `"FeatureCollection"` is of `"featureType"` `"Site"`, `"Building"`, `"Floor"`, `"Space"`, or `"Component"` in this hierarchical sequence.
 - Except fo the `"Site"`, each of these objects contains the foreign key id of its parent object in the following format: [parent]_id (e.g. site_id, building_id, etc.).
 - Each of these objects must have a member with the name `"geometry"`.
-- Each of these objects has a fixed set of attibutes in the `"properties"` and may have other member objects with additional building data.
+- Each of these objects has a fixed set of attributes in the `"properties"` and may have other member objects with additional building data.
 
 ### 4.3. AttributeCollection
-- An `"AttributeCollection"` of type `"System"`, `"Zone"`, `"Contact"`, `"ComponentType"` and possibley others contain non-geometric building data.
+- An `"AttributeCollection"` of type `"System"`, `"Zone"`, `"Contact"`, `"ComponentType"` and possibly others contain non-geometric building data.
 
 ### 5.1 The Site Feature
 - The coordinates in the `"Site"` object are always longitude/latitude coordinates based on the WGS84 datum.
@@ -144,7 +144,7 @@ For linear and point objects it is possible to use geometries of types `"point"`
 
 ### 5.2 The Building Feature
 - The `"geometry"` object of the `"Building"` is of type `"Point"` with world coordinates based on the WGS84 datum.
-- This `"Point"` serves as the point of origin of the orthogoanal local coordinate system within the building for BIMJSON objects.
+- This `"Point"` serves as the point of origin of the orthogonal local coordinate system within the building for BIMJSON objects.
 - In addition to the standard members of a `"FeatureCollection"`, the `"Building"` object contains the following `"properties"`:
   - `"view_angle"`: the clockwise rotation of the view-port in radians to allow the building and its children to be displayed in an orthogonal layout (i.e. the building is rotated anti-clockwise to fit the orthogonal view-port). This angle does not have any impact on the local coordinates. **It's for viewing purposes only**.
 
@@ -164,7 +164,7 @@ For linear and point objects it is possible to use geometries of types `"point"`
   - `"number"`
   - `"height"` (room/space height)
   - `"label_placement"` object with `"z"` and `"y"` coordinates.
-- `"Space"` objects may have an array member called `"zones"` containing objects with at least a `"zone_id"` as a foreign key to the objects in the `"AttributeColletion"` of type `"Zone"`. For data exchanges, these objects may also contain all the attributes and objects from the related `"Zone"` type BIMJSON object.
+- `"Space"` objects may have an array member called `"zones"` containing objects with at least a `"zone_id"` as a foreign key to the objects in the `"AttributeCollection"` of type `"Zone"`. For data exchanges, these objects may also contain all the attributes and objects from the related `"Zone"` type BIMJSON object.
 
 ### 5.5 The Component Feature
 - The `"geometry"` object of the `"Component"` is a `"Point"` type with coordinates for all three axes. In addition, it contains an `"angle"` attribute with the counterclockwise rotation of the object in radians and a `"mirror_y"` attribute that can be set to `"true"` or `"false"`. Note: Mirroring over the X-axis is not needed since the combination of a rotation with a mirroring over the Y-axis leads to the same result.
@@ -175,13 +175,13 @@ For linear and point objects it is possible to use geometries of types `"point"`
   - `"serial number"`
   - `"installation_date"` in a ISO 8601 format (e.g. 1997-07-16)
   - `"bar_code"`
-- `"Component"` objects may have an array member called `"systems"` containing objects with at least a `"system_id"` as a foreign key to the objects in the "AttributeColletion" of type `"System"`. For data exchanges, these objects may also contain all the attributes and objects from the related `"System"` type BIMJSON object.
-- `"Component"` objects may have a single object member called `"component_type"` containing at least a `"component_type_id"` as a foreign key to the objects in the `"AttributeColletion"` of type `"ComponentType"`. For data exchanges, this object may also contain all the attributes and objects from the related `"ComponentType"` BIMJSON object.
+- `"Component"` objects may have an array member called `"systems"` containing objects with at least a `"system_id"` as a foreign key to the objects in the "AttributeCollection" of type `"System"`. For data exchanges, these objects may also contain all the attributes and objects from the related `"System"` type BIMJSON object.
+- `"Component"` objects may have a single object member called `"component_type"` containing at least a `"component_type_id"` as a foreign key to the objects in the `"AttributeCollection"` of type `"ComponentType"`. For data exchanges, this object may also contain all the attributes and objects from the related `"ComponentType"` BIMJSON object.
 
 ### 6.1. The ComponentType Attribute
 - The non-geometric data of identical components in a building is stored in an `"AttributeCollection"` of `"featureType"` `"ComponentType"`
-- As an alternative to being transmitted in a separate **compnent_types.json** file, a single object of this type can be included with each "Component" feature.
-- In addtion to the standard members of an `"AttributeCollection"`, `"ComponentType"` objects shall have 2 additional attributes:
+- As an alternative to being transmitted in a separate **component_types.json** file, a single object of this type can be included with each "Component" feature.
+- In addition to the standard members of an `"AttributeCollection"`, `"ComponentType"` objects shall have 2 additional attributes:
   - `"model_number"`
   - `"manufacturer_id"` (a unique ID in contacts.json)
 
@@ -197,6 +197,6 @@ For linear and point objects it is possible to use geometries of types `"point"`
 
 ### 6.4. The Contact Attribute
 - The non-geometric data of contacts associated with a building (planners, owners, contractors, manufacturers, warrantors, etc.) is stored in an `"AttributeCollection"` of `"featureType"` ``"Contact"``
-- In addtion to the standard members of an `"AttributeCollection"`, `"ComponentType"` objects shall have 3 additional attributes:
+- In addition to the standard members of an `"AttributeCollection"`, `"ComponentType"` objects shall have 3 additional attributes:
   - `"www"` (a unique web address or email)
   - `"phone"` (main phone number of contact)
