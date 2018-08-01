@@ -1,6 +1,4 @@
-# BIMJSON REST API
-
-Version 0.2, [GitHub repository](https://github.com/vdubya/BIMJSON)
+# BIMJSON Format Specification
 
 ## Introduction
 BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building Information Model) (MVB) through web services. The main objective is to create a clear and easy to understand structure with a high level of flexibility for data exchanges. BIMJSON geometry objects are an extension of [GeoJSON](http://geojson.org/). This API adheres to the [BIMJSON REST API Guidelines](https://github.com/vdubya/BIMJSON/blob/master/BIMJSON-REST-API-Guidelines.md). BIMJSON is a collaborative effort...please submit GitHub pull requests for fixes and features for the API and Guidelines.
@@ -111,8 +109,8 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 For linear and point objects it is possible to use geometries of types `"point"` and `"line_string"`. 
 
 ### 3. The Coordinate System
-- A `"Site"` and `"Building"` objects are always longitude/latitude coordinates based on the WGS84 datum (the default of GeoJSON, KML, and others)
-- The coordinates in the geometry object of the `"Floor"`, `"Space"`, and `"Component"` feature type may be relative to the point of the building geometry object. The `"x"`, `"y"`, and `"z"` values are the displacement in meters from the WGS84 coordinates of the point of the building geometry object (the "insertion point").
+- `"Site"` and `"Building"` objects are always longitude/latitude coordinates based on the WGS84 datum (the default of GeoJSON, KML, and others)
+- The coordinates in the geometry object of the `"Floor"`, `"Space"`, and `"Component"` feature type shall be relative to the point of the building geometry object. The `"x"`, `"y"`, and `"z"` values are the displacement in meters from the WGS84 coordinates of the point of the building geometry object (the "insertion point").
 - In addition to the use of the **orthogonal local coordinate system**, applications which support BIMJSON exchanges may also use **a GeoJSON flavor by using transformations** to convert all local coordinates into WGS84 coordinates. Whenever the coordinates are transformed to make them useful in a GIS environment the following rules shall be applied: 
   - The `"arc"` geometry specified for BIMJSON shall be segmented into straight lines (Note: the `"arc"` geometry requires a precision of at least 6 decimal point in meters which is why it is not recommended to use `"arcs`" with the WGS84 datum.)
   - The additional `"ComplexPolygon"` geometry type used to allow arcs is not needed and shall be avoided.
@@ -131,7 +129,7 @@ For linear and point objects it is possible to use geometries of types `"point"`
 
 ### 4.2. FeatureCollection
 - A `"FeatureCollection"` is of `"featureType"` `"Site"`, `"Building"`, `"Floor"`, `"Space"`, or `"Component"` in this hierarchical sequence.
-- Except fo the `"Site"`, each of these objects contains the foreign key id of its parent object in the following format: [parent]_id (e.g. site_id, building_id, etc.).
+- Except for the `"Site"`, each of these objects contains the foreign key id of its parent object in the following format: [parent]_id (e.g. site_id, building_id, etc.).
 - Each of these objects must have a member with the name `"geometry"`.
 - Each of these objects has a fixed set of attributes in the `"properties"` and may have other member objects with additional building data.
 
