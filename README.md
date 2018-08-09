@@ -104,7 +104,7 @@ BIMJSON is a format for encoding the exchange of Minimal Viable BIMs (Building I
 **Graphic Representation**
 
 
-![Arc](https://www.onuma.com/transfer/ArcDiagram.png)
+![Arc](http://bimjson.com/ArcDiagram.png)
 
 For linear and point objects it is possible to use geometries of types `"point"` and `"line_string"`. 
 
