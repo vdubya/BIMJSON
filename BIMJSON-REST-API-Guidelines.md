@@ -1,5 +1,5 @@
 # BIMJSON REST API Design Guidelines
-# API Design Cheat Sheet
+
 1. Build the API with consumers in mind--as a product in its own right.
     * Not for a specific UI.
     * Embrace flexibility / tunability of each endpoint (see #5, 6 & 7).
